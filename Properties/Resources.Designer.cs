@@ -63,6 +63,16 @@ namespace LabadaPOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_40px {
+            get {
+                object obj = ResourceManager.GetObject("add_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carpet_120px {
             get {
                 object obj = ResourceManager.GetObject("carpet_120px", resourceCulture);
@@ -126,6 +136,16 @@ namespace LabadaPOS.Properties {
         internal static System.Drawing.Bitmap dryclean_120px {
             get {
                 object obj = ResourceManager.GetObject("dryclean_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_detergent_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-detergent-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
