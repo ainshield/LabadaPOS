@@ -63,6 +63,16 @@ namespace LabadaPOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carpet_120px {
+            get {
+                object obj = ResourceManager.GetObject("carpet_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_40px {
             get {
                 object obj = ResourceManager.GetObject("Close_40px", resourceCulture);
@@ -76,6 +86,106 @@ namespace LabadaPOS.Properties {
         internal static System.Drawing.Bitmap Close_40px1 {
             get {
                 object obj = ResourceManager.GetObject("Close_40px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clothes_40px {
+            get {
+                object obj = ResourceManager.GetObject("clothes_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap coloredshirt_120px {
+            get {
+                object obj = ResourceManager.GetObject("coloredshirt_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delivery_120px {
+            get {
+                object obj = ResourceManager.GetObject("delivery_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dryclean_120px {
+            get {
+                object obj = ResourceManager.GetObject("dryclean_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jeans_120px {
+            get {
+                object obj = ResourceManager.GetObject("jeans_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logout_40px {
+            get {
+                object obj = ResourceManager.GetObject("Logout_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap machine_wash_120px {
+            get {
+                object obj = ResourceManager.GetObject("machine_wash_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pickup_120px {
+            get {
+                object obj = ResourceManager.GetObject("pickup_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_40px {
+            get {
+                object obj = ResourceManager.GetObject("settings_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap truck_40px {
+            get {
+                object obj = ResourceManager.GetObject("truck_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +216,16 @@ namespace LabadaPOS.Properties {
         internal static System.Drawing.Bitmap washing_machine_40px {
             get {
                 object obj = ResourceManager.GetObject("washing_machine_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whiteshirt_120px {
+            get {
+                object obj = ResourceManager.GetObject("whiteshirt_120px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

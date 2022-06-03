@@ -29,6 +29,7 @@ namespace LabadaPOS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pin_txtbx = new System.Windows.Forms.TextBox();
@@ -38,7 +39,9 @@ namespace LabadaPOS
             this.label1 = new System.Windows.Forms.Label();
             this.login_btn = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.date_time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.checkdbcon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.header)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -143,6 +146,12 @@ namespace LabadaPOS
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // date_time
             // 
             this.date_time.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -150,12 +159,24 @@ namespace LabadaPOS
             this.date_time.Size = new System.Drawing.Size(64, 17);
             this.date_time.Text = "date_time";
             // 
+            // checkdbcon
+            // 
+            this.checkdbcon.Location = new System.Drawing.Point(542, 513);
+            this.checkdbcon.Name = "checkdbcon";
+            this.checkdbcon.Size = new System.Drawing.Size(30, 23);
+            this.checkdbcon.TabIndex = 11;
+            this.checkdbcon.Text = "db";
+            this.checkdbcon.UseVisualStyleBackColor = true;
+            this.checkdbcon.Visible = false;
+            this.checkdbcon.Click += new System.EventHandler(this.checkdbcon_Click);
+            // 
             // LoginFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.checkdbcon);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.label1);
@@ -190,7 +211,9 @@ namespace LabadaPOS
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel date_time;
+        private System.Windows.Forms.Button checkdbcon;
     }
 }
 
