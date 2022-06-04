@@ -37,12 +37,15 @@ namespace LabadaPOS
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericUpDown_heavy = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_medium = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown_light = new System.Windows.Forms.NumericUpDown();
-            this.heavybtn = new System.Windows.Forms.Button();
-            this.mediumbtn = new System.Windows.Forms.Button();
-            this.lightbtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dryclean_btn = new System.Windows.Forms.Button();
             this.machinewash_btn = new System.Windows.Forms.Button();
@@ -61,7 +64,6 @@ namespace LabadaPOS
             this.tab1_btn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.total_lbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -81,12 +83,15 @@ namespace LabadaPOS
             this.panel6 = new System.Windows.Forms.Panel();
             this.addons_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.total_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.exitbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_heavy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_medium)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_light)).BeginInit();
@@ -172,12 +177,15 @@ namespace LabadaPOS
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.pictureBox3);
+            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.numericUpDown_heavy);
             this.tabPage1.Controls.Add(this.numericUpDown_medium);
             this.tabPage1.Controls.Add(this.numericUpDown_light);
-            this.tabPage1.Controls.Add(this.heavybtn);
-            this.tabPage1.Controls.Add(this.mediumbtn);
-            this.tabPage1.Controls.Add(this.lightbtn);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -185,80 +193,95 @@ namespace LabadaPOS
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(433, 155);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 17);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Heavy";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(246, 155);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 17);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Medium";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(76, 155);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Light";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::LabadaPOS.Properties.Resources.carpet_120px;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(379, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LabadaPOS.Properties.Resources.jeans_120px;
+            this.pictureBox2.InitialImage = null;
+            this.pictureBox2.Location = new System.Drawing.Point(199, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LabadaPOS.Properties.Resources.coloredshirt_120px;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(20, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // numericUpDown_heavy
             // 
+            this.numericUpDown_heavy.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown_heavy.Location = new System.Drawing.Point(379, 177);
             this.numericUpDown_heavy.Name = "numericUpDown_heavy";
-            this.numericUpDown_heavy.Size = new System.Drawing.Size(150, 23);
+            this.numericUpDown_heavy.Size = new System.Drawing.Size(150, 35);
             this.numericUpDown_heavy.TabIndex = 6;
-            this.numericUpDown_heavy.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_heavy.ValueChanged += new System.EventHandler(this.numericUpDown_heavy_ValueChanged);
             // 
             // numericUpDown_medium
             // 
+            this.numericUpDown_medium.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown_medium.Location = new System.Drawing.Point(199, 177);
             this.numericUpDown_medium.Name = "numericUpDown_medium";
-            this.numericUpDown_medium.Size = new System.Drawing.Size(150, 23);
+            this.numericUpDown_medium.Size = new System.Drawing.Size(150, 35);
             this.numericUpDown_medium.TabIndex = 5;
-            this.numericUpDown_medium.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_medium.ValueChanged += new System.EventHandler(this.numericUpDown_medium_ValueChanged);
             // 
             // numericUpDown_light
             // 
+            this.numericUpDown_light.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown_light.Location = new System.Drawing.Point(20, 177);
             this.numericUpDown_light.Name = "numericUpDown_light";
-            this.numericUpDown_light.Size = new System.Drawing.Size(150, 23);
+            this.numericUpDown_light.Size = new System.Drawing.Size(150, 35);
             this.numericUpDown_light.TabIndex = 4;
-            this.numericUpDown_light.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_light.ValueChanged += new System.EventHandler(this.numericUpDown_light_ValueChanged);
-            // 
-            // heavybtn
-            // 
-            this.heavybtn.Image = global::LabadaPOS.Properties.Resources.carpet_120px;
-            this.heavybtn.Location = new System.Drawing.Point(379, 21);
-            this.heavybtn.Name = "heavybtn";
-            this.heavybtn.Size = new System.Drawing.Size(150, 150);
-            this.heavybtn.TabIndex = 3;
-            this.heavybtn.Text = "Heavy ";
-            this.heavybtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.heavybtn.UseVisualStyleBackColor = true;
-            this.heavybtn.Click += new System.EventHandler(this.heavybtn_Click);
-            // 
-            // mediumbtn
-            // 
-            this.mediumbtn.Image = global::LabadaPOS.Properties.Resources.jeans_120px;
-            this.mediumbtn.Location = new System.Drawing.Point(199, 21);
-            this.mediumbtn.Name = "mediumbtn";
-            this.mediumbtn.Size = new System.Drawing.Size(150, 150);
-            this.mediumbtn.TabIndex = 1;
-            this.mediumbtn.Text = "Medium";
-            this.mediumbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mediumbtn.UseVisualStyleBackColor = true;
-            this.mediumbtn.Click += new System.EventHandler(this.mediumbtn_Click);
-            // 
-            // lightbtn
-            // 
-            this.lightbtn.Image = global::LabadaPOS.Properties.Resources.coloredshirt_120px;
-            this.lightbtn.Location = new System.Drawing.Point(20, 21);
-            this.lightbtn.Name = "lightbtn";
-            this.lightbtn.Size = new System.Drawing.Size(150, 150);
-            this.lightbtn.TabIndex = 0;
-            this.lightbtn.Text = "Light";
-            this.lightbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.lightbtn.UseVisualStyleBackColor = true;
-            this.lightbtn.Click += new System.EventHandler(this.lightbtn_Click);
             // 
             // tabPage2
             // 
@@ -496,22 +519,11 @@ namespace LabadaPOS
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(978, 605);
+            this.label2.Location = new System.Drawing.Point(974, 485);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 37);
             this.label2.TabIndex = 14;
             this.label2.Text = "Total";
-            // 
-            // total_lbl
-            // 
-            this.total_lbl.AutoSize = true;
-            this.total_lbl.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.total_lbl.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.total_lbl.Location = new System.Drawing.Point(1099, 609);
-            this.total_lbl.Name = "total_lbl";
-            this.total_lbl.Size = new System.Drawing.Size(165, 86);
-            this.total_lbl.TabIndex = 15;
-            this.total_lbl.Text = "0.00";
             // 
             // label3
             // 
@@ -549,6 +561,7 @@ namespace LabadaPOS
             this.hvyqty_txt.Size = new System.Drawing.Size(85, 33);
             this.hvyqty_txt.TabIndex = 24;
             this.hvyqty_txt.Text = "0";
+            this.hvyqty_txt.TextChanged += new System.EventHandler(this.hvyqty_txt_TextChanged);
             // 
             // mdqty_txt
             // 
@@ -561,6 +574,7 @@ namespace LabadaPOS
             this.mdqty_txt.Size = new System.Drawing.Size(85, 33);
             this.mdqty_txt.TabIndex = 23;
             this.mdqty_txt.Text = "0";
+            this.mdqty_txt.TextChanged += new System.EventHandler(this.mdqty_txt_TextChanged);
             // 
             // ltqty_txt
             // 
@@ -573,6 +587,7 @@ namespace LabadaPOS
             this.ltqty_txt.Size = new System.Drawing.Size(85, 33);
             this.ltqty_txt.TabIndex = 22;
             this.ltqty_txt.Text = "0";
+            this.ltqty_txt.TextChanged += new System.EventHandler(this.ltqty_txt_TextChanged);
             // 
             // label7
             // 
@@ -628,6 +643,7 @@ namespace LabadaPOS
             this.pikupmthd_txt.Size = new System.Drawing.Size(282, 33);
             this.pikupmthd_txt.TabIndex = 1;
             this.pikupmthd_txt.Text = "Pickup";
+            this.pikupmthd_txt.TextChanged += new System.EventHandler(this.pikupmthd_txt_TextChanged);
             // 
             // label12
             // 
@@ -661,6 +677,7 @@ namespace LabadaPOS
             this.lndrymthd_txt.Size = new System.Drawing.Size(282, 33);
             this.lndrymthd_txt.TabIndex = 1;
             this.lndrymthd_txt.Text = "Machine Wash";
+            this.lndrymthd_txt.TextChanged += new System.EventHandler(this.lndrymthd_txt_TextChanged);
             // 
             // label4
             // 
@@ -676,9 +693,9 @@ namespace LabadaPOS
             // confirm_btn
             // 
             this.confirm_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.confirm_btn.Location = new System.Drawing.Point(1044, 505);
+            this.confirm_btn.Location = new System.Drawing.Point(978, 624);
             this.confirm_btn.Name = "confirm_btn";
-            this.confirm_btn.Size = new System.Drawing.Size(148, 63);
+            this.confirm_btn.Size = new System.Drawing.Size(290, 71);
             this.confirm_btn.TabIndex = 21;
             this.confirm_btn.Text = "Confirm Order";
             this.confirm_btn.UseVisualStyleBackColor = true;
@@ -705,6 +722,7 @@ namespace LabadaPOS
             this.addons_txt.Size = new System.Drawing.Size(282, 33);
             this.addons_txt.TabIndex = 1;
             this.addons_txt.Text = "none";
+            this.addons_txt.TextChanged += new System.EventHandler(this.addons_txt_TextChanged);
             // 
             // label5
             // 
@@ -717,19 +735,33 @@ namespace LabadaPOS
             this.label5.Text = "Add-Ons";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // total_txt
+            // 
+            this.total_txt.BackColor = System.Drawing.Color.White;
+            this.total_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.total_txt.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.total_txt.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.total_txt.Location = new System.Drawing.Point(978, 525);
+            this.total_txt.Name = "total_txt";
+            this.total_txt.ReadOnly = true;
+            this.total_txt.Size = new System.Drawing.Size(290, 93);
+            this.total_txt.TabIndex = 22;
+            this.total_txt.Text = "0.00";
+            this.total_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.total_txt);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.confirm_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.total_lbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -746,6 +778,10 @@ namespace LabadaPOS
             this.panel1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_heavy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_medium)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_light)).EndInit();
@@ -783,13 +819,9 @@ namespace LabadaPOS
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button tab2_btn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label total_lbl;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button tab4_btn;
-        private System.Windows.Forms.Button heavybtn;
-        private System.Windows.Forms.Button mediumbtn;
-        private System.Windows.Forms.Button lightbtn;
         private System.Windows.Forms.Button adminbtn;
         private System.Windows.Forms.Button dryclean_btn;
         private System.Windows.Forms.Button machinewash_btn;
@@ -819,6 +851,12 @@ namespace LabadaPOS
         private System.Windows.Forms.TextBox addons_txt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button detergentbtn;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox total_txt;
     }
 }

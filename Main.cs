@@ -10,6 +10,8 @@ namespace LabadaPOS
 {
     public partial class Main : Form
     {
+        public double formula { get; set; }
+
         public static Main instance;
         public Main()
         {
@@ -17,7 +19,54 @@ namespace LabadaPOS
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.ItemSize = new Size(0, 1);
             tabControl.SizeMode = TabSizeMode.Fixed;
-        }                                  
+            
+        }
+        public void ChangeLabelText()
+        {
+            double lt = 35;
+            double md = 55;
+            double hvy = 75;
+
+            double ltkilo = double.Parse(ltqty_txt.Text);
+            double hvykilo = double.Parse(hvyqty_txt.Text);
+            double mdkilo = double.Parse(mdqty_txt.Text);
+            double kilos = ltkilo + hvykilo + mdkilo;
+            double lttotal = ltkilo * lt;
+            double mdtotal = mdkilo * md;
+            double hvytotal = hvykilo * hvy;
+            double kilototal = lttotal + mdtotal + hvytotal;
+
+            double addons = kilos * 15;
+            double delivery;
+
+            if (pikupmthd_txt.Text == "Delivery")
+            {
+                delivery = 30;
+            }
+            else
+            {
+                delivery = 0;
+            }
+
+
+            if (addons_txt.Text == "Laundry Detergent" && pikupmthd_txt.Text == "Delivery")
+            {
+                formula = kilototal + addons + delivery;
+            }
+            else if (addons_txt.Text != "Laundry Detergent" && pikupmthd_txt.Text == "Delivery")
+            {
+                formula = kilototal + delivery;
+            }
+            else if (addons_txt.Text == "Laundry Detergent" && pikupmthd_txt.Text != "Delivery")
+            {
+                formula = kilototal + addons;
+            }
+            else
+            {
+                formula = kilototal;
+            }
+            total_txt.Text = formula.ToString("F2");
+        }
 
         private void exitbtn_Click(object sender, EventArgs e)
         {
@@ -58,25 +107,12 @@ namespace LabadaPOS
             tabControl.SelectTab(3);
         }
 
-        private void lightbtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void mediumbtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void heavybtn_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void settingsbtn_Click(object sender, EventArgs e)
         {
 
         }
+
+
 
         private void machinewash_btn_Click(object sender, EventArgs e)
         {
@@ -107,50 +143,7 @@ namespace LabadaPOS
 
         private void confirm_btn_Click(object sender, EventArgs e)
         {
-            int lt = 35;
-            int md = 55;
-            int hvy = 75;
-
-            int ltkilo = int.Parse(ltqty_txt.Text);
-            int hvykilo = int.Parse(hvyqty_txt.Text);
-            int mdkilo = int.Parse(mdqty_txt.Text);
-            int kilos = ltkilo + hvykilo + mdkilo;
-            int lttotal = ltkilo * lt;
-            int mdtotal = mdkilo * md;
-            int hvytotal = hvykilo * hvy;
-            int kilototal = lttotal + mdtotal + hvytotal;
-
-            int addons = kilos*15;
-            int delivery;
-
-            if (pikupmthd_txt.Text == "Delivery")
-            {
-                delivery = 30;
-            }
-            else
-            {
-                delivery = 0;
-            }
-
-            int formula;
-
-            if (addons_txt.Text == "Laundry Detergent" && pikupmthd_txt.Text == "Delivery")
-            {
-                formula = kilototal + addons + delivery;
-            }
-            else if (addons_txt.Text != "Laundry Detergent" && pikupmthd_txt.Text == "Delivery")
-            {
-                formula = kilototal + delivery;
-            }
-            else if (addons_txt.Text == "Laundry Detergent" && pikupmthd_txt.Text != "Delivery")
-            {
-                formula = kilototal + addons;
-            }
-            else {
-                formula = kilototal;
-            }
-
-            total_lbl.Text = formula.ToString();
+            
         }
 
         private void deliverybtn_Click(object sender, EventArgs e)
@@ -179,6 +172,36 @@ namespace LabadaPOS
         {
             string hvyqty = numericUpDown_heavy.Value.ToString();
             hvyqty_txt.Text = hvyqty;
+        }
+
+        private void ltqty_txt_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLabelText();
+        }
+
+        private void mdqty_txt_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLabelText();
+        }
+
+        private void hvyqty_txt_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLabelText();
+        }
+
+        private void lndrymthd_txt_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLabelText();
+        }
+
+        private void addons_txt_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLabelText();
+        }
+
+        private void pikupmthd_txt_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLabelText();
         }
     }
 }
