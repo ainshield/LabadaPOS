@@ -5,6 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data.SQLite;
+using System.Data.SqlTypes;
 
 namespace LabadaPOS
 {
@@ -112,8 +115,6 @@ namespace LabadaPOS
 
         }
 
-
-
         private void machinewash_btn_Click(object sender, EventArgs e)
         {
 
@@ -131,19 +132,52 @@ namespace LabadaPOS
 
         private void detergentbtn_Click(object sender, EventArgs e)
         {
-            if (addons_txt.Text == "")
+            if (addons_txt.Text == "none")
             {
                 addons_txt.Text = "Laundry Detergent";
             }
             else {
-                addons_txt.Text = "";
+                addons_txt.Text = "none";
             }
             
         }
 
         private void confirm_btn_Click(object sender, EventArgs e)
         {
-            
+           
+            DialogResult dr = MessageBox.Show(
+                "Confirm transaction?", "LabadaPOS", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+            );
+
+            if (dr == DialogResult.Yes)
+            {
+
+                try
+                {
+                    System.DateTime date = new System.DateTime();
+                    string myConnection = "Data Source=sales.db;Version=3;";
+                    SQLiteConnection con = new SQLiteConnection(myConnection, true);
+                    string insert = "INSERT INTO SALES (MONTH, YEAR, INCOME)" +
+                        "VALUES (@month, @year, @income)";
+                    SQLiteCommand cmd = new SQLiteCommand(insert, con);
+                    cmd.Parameters.AddWithValue("@month", date.Month);
+                    cmd.Parameters.AddWithValue("@year", date.Year);
+                    cmd.Parameters.AddWithValue("@income", formula);
+                    //SQLiteDataAdapter da = new; 
+
+                    con.Open();
+                    MessageBox.Show("Transaction complete.", "LabadaPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else { 
+                
+            }
         }
 
         private void deliverybtn_Click(object sender, EventArgs e)

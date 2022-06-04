@@ -22,12 +22,6 @@ namespace LabadaPOS
            
         }
 
-
-
-        public void dbConn() {
-
-        }
-
         private void exitbtn_MouseHover(object sender, EventArgs e)
         {
             exitbtn.BackColor = Color.SkyBlue;
@@ -58,30 +52,38 @@ namespace LabadaPOS
             }
             else
             {
-                string myConnection = "Data Source=logindata.db;Version=3;";
-                SQLiteConnection con = new SQLiteConnection(myConnection, true);
-                string query = "SELECT* FROM USERLOGIN WHERE PIN=@PIN";
-                SQLiteCommand cmd = new SQLiteCommand(query, con);
-                cmd.Parameters.AddWithValue("@PIN", pin_txtbx.Text);
-                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                con.Open();
-                if (dt.Rows.Count > 0)
+                try
+                {
+                    string myConnection = "Data Source=logindata.db;Version=3;";
+                    SQLiteConnection con = new SQLiteConnection(myConnection, true);
+                    string query = "SELECT* FROM USERLOGIN WHERE PIN=@PIN";
+                    SQLiteCommand cmd = new SQLiteCommand(query, con);
+                    cmd.Parameters.AddWithValue("@PIN", pin_txtbx.Text);
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    con.Open();
+                    if (dt.Rows.Count > 0)
+                    {
+
+                        var Main = new Main();
+                        Main.Show();
+                        this.Hide();
+                        con.Close();
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Invalid PIN", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+                }
+                catch (Exception ex)
                 {
 
-                    var Main = new Main();
-                    Main.Show();
-                    this.Hide();
-                    con.Close();
-
-                }
-                else {
-
-                    MessageBox.Show("Invalid PIN", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                
+                    MessageBox.Show(ex.Message);
+                }                
                 
             }
         }
