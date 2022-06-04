@@ -60,20 +60,17 @@ namespace LabadaPOS
 
         private void lightbtn_Click(object sender, EventArgs e)
         {
-            string ltqty = numericUpDown_light.Value.ToString();
-            ltqty_txt.Text = ltqty;
+            
         }
 
         private void mediumbtn_Click(object sender, EventArgs e)
         {
-            string mdqty = numericUpDown_medium.Value.ToString();
-            mdqty_txt.Text = mdqty;
+            
         }
 
         private void heavybtn_Click(object sender, EventArgs e)
         {
-            string hvyqty = numericUpDown_heavy.Value.ToString();
-            hvyqty_txt.Text = hvyqty;
+            
         }
 
         private void settingsbtn_Click(object sender, EventArgs e)
@@ -98,7 +95,14 @@ namespace LabadaPOS
 
         private void detergentbtn_Click(object sender, EventArgs e)
         {
-            addons_txt.Text = "Laundry Detergent";
+            if (addons_txt.Text == "")
+            {
+                addons_txt.Text = "Laundry Detergent";
+            }
+            else {
+                addons_txt.Text = "";
+            }
+            
         }
 
         private void confirm_btn_Click(object sender, EventArgs e)
@@ -106,27 +110,45 @@ namespace LabadaPOS
             int lt = 35;
             int md = 55;
             int hvy = 75;
+
             int ltkilo = int.Parse(ltqty_txt.Text);
             int hvykilo = int.Parse(hvyqty_txt.Text);
             int mdkilo = int.Parse(mdqty_txt.Text);
             int kilos = ltkilo + hvykilo + mdkilo;
-            int addons = 15;
+            int lttotal = ltkilo * lt;
+            int mdtotal = mdkilo * md;
+            int hvytotal = hvykilo * hvy;
+            int kilototal = lttotal + mdtotal + hvytotal;
+
+            int addons = kilos*15;
             int delivery;
 
-            if (pikupmthd_txt.Text == "Delivery") {
+            if (pikupmthd_txt.Text == "Delivery")
+            {
                 delivery = 30;
             }
-            else {
+            else
+            {
                 delivery = 0;
             }
 
             int formula;
 
-            if (addons_txt.Text == "Laundry Detergent") {
-                formula = kilos * addons + delivery;
-            } else {
-                formula = kilos + delivery;
-            } 
+            if (addons_txt.Text == "Laundry Detergent" && pikupmthd_txt.Text == "Delivery")
+            {
+                formula = kilototal + addons + delivery;
+            }
+            else if (addons_txt.Text != "Laundry Detergent" && pikupmthd_txt.Text == "Delivery")
+            {
+                formula = kilototal + delivery;
+            }
+            else if (addons_txt.Text == "Laundry Detergent" && pikupmthd_txt.Text != "Delivery")
+            {
+                formula = kilototal + addons;
+            }
+            else {
+                formula = kilototal;
+            }
 
             total_lbl.Text = formula.ToString();
         }
@@ -139,6 +161,24 @@ namespace LabadaPOS
         private void pickupbtn_Click(object sender, EventArgs e)
         {
             pikupmthd_txt.Text = "Pickup";
+        }
+
+        private void numericUpDown_light_ValueChanged(object sender, EventArgs e)
+        {
+            string ltqty = numericUpDown_light.Value.ToString();
+            ltqty_txt.Text = ltqty;
+        }
+
+        private void numericUpDown_medium_ValueChanged(object sender, EventArgs e)
+        {
+            string mdqty = numericUpDown_medium.Value.ToString();
+            mdqty_txt.Text = mdqty;
+        }
+
+        private void numericUpDown_heavy_ValueChanged(object sender, EventArgs e)
+        {
+            string hvyqty = numericUpDown_heavy.Value.ToString();
+            hvyqty_txt.Text = hvyqty;
         }
     }
 }

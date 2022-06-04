@@ -81,6 +81,7 @@ namespace LabadaPOS
             this.panel6 = new System.Windows.Forms.Panel();
             this.addons_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.exitbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -195,6 +196,7 @@ namespace LabadaPOS
             0,
             0,
             0});
+            this.numericUpDown_heavy.ValueChanged += new System.EventHandler(this.numericUpDown_heavy_ValueChanged);
             // 
             // numericUpDown_medium
             // 
@@ -207,6 +209,7 @@ namespace LabadaPOS
             0,
             0,
             0});
+            this.numericUpDown_medium.ValueChanged += new System.EventHandler(this.numericUpDown_medium_ValueChanged);
             // 
             // numericUpDown_light
             // 
@@ -219,6 +222,7 @@ namespace LabadaPOS
             0,
             0,
             0});
+            this.numericUpDown_light.ValueChanged += new System.EventHandler(this.numericUpDown_light_ValueChanged);
             // 
             // heavybtn
             // 
@@ -544,6 +548,7 @@ namespace LabadaPOS
             this.hvyqty_txt.ReadOnly = true;
             this.hvyqty_txt.Size = new System.Drawing.Size(85, 33);
             this.hvyqty_txt.TabIndex = 24;
+            this.hvyqty_txt.Text = "0";
             // 
             // mdqty_txt
             // 
@@ -555,6 +560,7 @@ namespace LabadaPOS
             this.mdqty_txt.ReadOnly = true;
             this.mdqty_txt.Size = new System.Drawing.Size(85, 33);
             this.mdqty_txt.TabIndex = 23;
+            this.mdqty_txt.Text = "0";
             // 
             // ltqty_txt
             // 
@@ -566,6 +572,7 @@ namespace LabadaPOS
             this.ltqty_txt.ReadOnly = true;
             this.ltqty_txt.Size = new System.Drawing.Size(85, 33);
             this.ltqty_txt.TabIndex = 22;
+            this.ltqty_txt.Text = "0";
             // 
             // label7
             // 
@@ -620,6 +627,7 @@ namespace LabadaPOS
             this.pikupmthd_txt.ReadOnly = true;
             this.pikupmthd_txt.Size = new System.Drawing.Size(282, 33);
             this.pikupmthd_txt.TabIndex = 1;
+            this.pikupmthd_txt.Text = "Pickup";
             // 
             // label12
             // 
@@ -652,6 +660,7 @@ namespace LabadaPOS
             this.lndrymthd_txt.ReadOnly = true;
             this.lndrymthd_txt.Size = new System.Drawing.Size(282, 33);
             this.lndrymthd_txt.TabIndex = 1;
+            this.lndrymthd_txt.Text = "Machine Wash";
             // 
             // label4
             // 
@@ -695,6 +704,7 @@ namespace LabadaPOS
             this.addons_txt.ReadOnly = true;
             this.addons_txt.Size = new System.Drawing.Size(282, 33);
             this.addons_txt.TabIndex = 1;
+            this.addons_txt.Text = "none";
             // 
             // label5
             // 
@@ -809,5 +819,6 @@ namespace LabadaPOS
         private System.Windows.Forms.TextBox addons_txt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button detergentbtn;
+        private System.Windows.Forms.Timer timer2;
     }
 }
