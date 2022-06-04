@@ -155,18 +155,32 @@ namespace LabadaPOS
                 try
                 {
                     System.DateTime date = new System.DateTime();
-                    string myConnection = "Data Source=sales.db;Version=3;";
+
+                    string myConnection = "Data Source= C:\\Users\\Vincent\\Desktop\\LabadaPOS\\sales.db;Version=3;";
                     SQLiteConnection con = new SQLiteConnection(myConnection, true);
-                    string insert = "INSERT INTO SALES (MONTH, YEAR, INCOME)" +
-                        "VALUES (@month, @year, @income)";
-                    SQLiteCommand cmd = new SQLiteCommand(insert, con);
+                    string insert = "INSERT INTO salestbl (MONTH, YEAR, INCOME) VALUES(@month, @year, @income)";
+
+
+                    SQLiteCommand cmd = new SQLiteCommand(insert,con);
+                    
+
                     cmd.Parameters.AddWithValue("@month", date.Month);
                     cmd.Parameters.AddWithValue("@year", date.Year);
-                    cmd.Parameters.AddWithValue("@income", formula);
+                    cmd.Parameters.AddWithValue("@income", total_txt.Text);
+                    
+                    con.Open();
+                    int i = cmd.ExecuteNonQuery();
+
+                    if (i == 1)
+                    {
+                        MessageBox.Show("Transaction complete.", "LabadaPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
+                    
                     //SQLiteDataAdapter da = new; 
 
-                    con.Open();
-                    MessageBox.Show("Transaction complete.", "LabadaPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    
                     con.Close();
                 }
                 catch (Exception ex)
