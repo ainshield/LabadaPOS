@@ -17,7 +17,32 @@ namespace LabadaPOS
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.ItemSize = new Size(0, 1);
             tabControl.SizeMode = TabSizeMode.Fixed;
+            instance = this;
         }                                  
+
+        public DataTable GetDataTable(){
+          
+            DataTable dt = new DataTable();
+            DataColumn id = dt.Columns.Add("ID", typeof(Int32));
+            id.AllowDBNull = false;
+            id.Unique = true;
+            dt.Columns.Add("ITEM", typeof(String));
+            dt.Columns.Add("QUANTITY", typeof(String));
+            dt.Columns.Add("PRICE", typeof(String));
+
+            DataRow row = null;
+            foreach (DataGridViewRow dr in ordergridview.Rows)
+            {
+                row = dt.NewRow();
+                row["ID"] = dr.Cells["ID"].Value;
+                row["ITEM"] = dr.Cells["ITEM"].Value;
+                row["QUANTITY"] = dr.Cells["QUANTITY"].Value;
+                row["PRICE"] = dr.Cells["PRICE"].Value;
+                dt.Rows.Add(row);
+            }
+
+            return dt;
+        }
 
         private void exitbtn_Click(object sender, EventArgs e)
         {
@@ -48,97 +73,37 @@ namespace LabadaPOS
         {
             tabControl.SelectTab(1);
         }
+
         private void tab3_btn_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(2);
         }
 
-        private void tab4_btn_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(3);
-        }
-
         private void lightbtn_Click(object sender, EventArgs e)
         {
-            string ltqty = numericUpDown_light.Value.ToString();
-            ltqty_txt.Text = ltqty;
+            
+            var qtyfrm = new QuantityFrm();
+            string quantity = qtyfrm.qty;
+            string[] light = new string[] {"", "Laundry_LIGHT", quantity, "35" };
+            qtyfrm.Show();
+            ordergridview.Rows.Add(light);
         }
+
+        
 
         private void mediumbtn_Click(object sender, EventArgs e)
         {
-            string mdqty = numericUpDown_medium.Value.ToString();
-            mdqty_txt.Text = mdqty;
+
         }
 
         private void heavybtn_Click(object sender, EventArgs e)
         {
-            string hvyqty = numericUpDown_heavy.Value.ToString();
-            hvyqty_txt.Text = hvyqty;
+
         }
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void machinewash_btn_Click(object sender, EventArgs e)
-        {
-
-            lndrymthd_txt.Text = "Machine Wash";
-
-        }
-
-        private void dryclean_btn_Click(object sender, EventArgs e)
-        {
-
-            lndrymthd_txt.Text = "Dry Clean (currently unavailable)";
-            MessageBox.Show("Dry Clean is currently unavailable.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-        private void detergentbtn_Click(object sender, EventArgs e)
-        {
-            addons_txt.Text = "Laundry Detergent";
-        }
-
-        private void confirm_btn_Click(object sender, EventArgs e)
-        {
-            int lt = 35;
-            int md = 55;
-            int hvy = 75;
-            int ltkilo = int.Parse(ltqty_txt.Text);
-            int hvykilo = int.Parse(hvyqty_txt.Text);
-            int mdkilo = int.Parse(mdqty_txt.Text);
-            int kilos = ltkilo + hvykilo + mdkilo;
-            int addons = 15;
-            int delivery;
-
-            if (pikupmthd_txt.Text == "Delivery") {
-                delivery = 30;
-            }
-            else {
-                delivery = 0;
-            }
-
-            int formula;
-
-            if (addons_txt.Text == "Laundry Detergent") {
-                formula = kilos * addons + delivery;
-            } else {
-                formula = kilos + delivery;
-            } 
-
-            total_lbl.Text = formula.ToString();
-        }
-
-        private void deliverybtn_Click(object sender, EventArgs e)
-        {
-            pikupmthd_txt.Text = "Delivery";
-        }
-
-        private void pickupbtn_Click(object sender, EventArgs e)
-        {
-            pikupmthd_txt.Text = "Pickup";
         }
     }
 }
