@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Data.SqlTypes;
+using System.IO;
 
 namespace LabadaPOS
 {
@@ -112,7 +113,17 @@ namespace LabadaPOS
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
+            string myConnection = "Data Source=sales.db;Version=3;";
+            SQLiteConnection con = new SQLiteConnection(myConnection, true);
 
+            if (myConnection != null && con.State == ConnectionState.Closed)
+            {
+                MessageBox.Show("Database Disconnected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Database Connected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void machinewash_btn_Click(object sender, EventArgs e)
@@ -144,7 +155,10 @@ namespace LabadaPOS
 
         private void confirm_btn_Click(object sender, EventArgs e)
         {
-           
+            string day = DateTime.Now.ToString("dd");
+            string month = DateTime.Now.ToString("MMMM");
+            string year = DateTime.Now.ToString("yyyy");
+
             DialogResult dr = MessageBox.Show(
                 "Confirm transaction?", "LabadaPOS", MessageBoxButtons.YesNo, MessageBoxIcon.Question
             );
@@ -154,19 +168,17 @@ namespace LabadaPOS
 
                 try
                 {
-                    System.DateTime date = new System.DateTime();
+                    //string fileName = "sales.db";
+                    //string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
 
-                    string myConnection = "Data Source= C:\\Users\\Vincent\\Desktop\\LabadaPOS\\sales.db;Version=3;";
+                    string myConnection = "Data Source=C:\\Users\\timo\\source\\repos\\LabadaPOS\\sales.db;Version=3;";
                     SQLiteConnection con = new SQLiteConnection(myConnection, true);
-                    string insert = "INSERT INTO salestbl (MONTH, YEAR, INCOME) VALUES(@month, @year, @income)";
-
-
-                    SQLiteCommand cmd = new SQLiteCommand(insert,con);
-                    
-
-                    cmd.Parameters.AddWithValue("@month", date.Month);
-                    cmd.Parameters.AddWithValue("@year", date.Year);
-                    cmd.Parameters.AddWithValue("@income", total_txt.Text);
+                    string insert = "INSERT INTO SALES(MONTH, DAY, YEAR, INCOME) VALUES(@MONTH,@DAY,@YEAR,@INCOME);";
+                    SQLiteCommand cmd = new SQLiteCommand(insert,con);                  
+                    cmd.Parameters.AddWithValue("@MONTH", month);
+                    cmd.Parameters.AddWithValue("@DAY", day);
+                    cmd.Parameters.AddWithValue("@YEAR", year);
+                    cmd.Parameters.AddWithValue("@INCOME", total_txt.Text);
                     
                     con.Open();
                     int i = cmd.ExecuteNonQuery();
@@ -175,9 +187,6 @@ namespace LabadaPOS
                     {
                         MessageBox.Show("Transaction complete.", "LabadaPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    
-                    
-                    //SQLiteDataAdapter da = new; 
 
                     
                     

@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <None Remove="logindata.db" />
+    <None Remove="sales.db" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="logindata.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sales.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
