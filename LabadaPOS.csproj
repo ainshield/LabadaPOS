@@ -7,14 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="logindata.db" />
     <None Remove="sales.db" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="bin\Debug\netcoreapp3.1\LabadaPOS.deps.json" />
-    <Content Include="bin\Debug\netcoreapp3.1\LabadaPOS.runtimeconfig.dev.json" />
-    <Content Include="bin\Debug\netcoreapp3.1\LabadaPOS.runtimeconfig.json" />
     <Content Include="logindata.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -24,25 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="bin\Release\netcoreapp3.1\" />
     <Folder Include="icons\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="bin\Debug\netcoreapp3.1\LabadaPOS.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\LabadaPOS.exe" />
-    <None Include="bin\Debug\netcoreapp3.1\LabadaPOS.pdb" />
-    <None Include="bin\Debug\netcoreapp3.1\logindata.db" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libsqlite3.so" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\SQLite.Interop.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libsqlite3.dylib" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\SQLite.Interop.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SQLite.Interop.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SQLite.Interop.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sqlite3.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sqlite3.dll" />
-    <None Include="bin\Debug\netcoreapp3.1\sales.db" />
-    <None Include="bin\Debug\netcoreapp3.1\System.Data.SQLite.dll" />
   </ItemGroup>
 
   <ItemGroup>

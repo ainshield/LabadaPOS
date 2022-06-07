@@ -113,17 +113,8 @@ namespace LabadaPOS
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
-            string myConnection = "Data Source=sales.db;Version=3;";
-            SQLiteConnection con = new SQLiteConnection(myConnection, true);
-
-            if (myConnection != null && con.State == ConnectionState.Closed)
-            {
-                MessageBox.Show("Database Disconnected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Database Connected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            var adminlogin = new AdminLogin();
+            adminlogin.Show();
         }
 
         private void machinewash_btn_Click(object sender, EventArgs e)
