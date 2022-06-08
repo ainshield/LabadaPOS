@@ -162,7 +162,7 @@ namespace LabadaPOS
                     //string fileName = "sales.db";
                     //string path = Path.Combine(Environment.CurrentDirectory, @"Data\", fileName);
 
-                    string myConnection = "Data Source=C:\\Users\\timo\\source\\repos\\LabadaPOS\\sales.db;Version=3;";
+                    string myConnection = @"Data Source=sales.db;Version=3;";
                     SQLiteConnection con = new SQLiteConnection(myConnection, true);
                     string insert = "INSERT INTO SALES(MONTH, DAY, YEAR, INCOME) VALUES(@MONTH,@DAY,@YEAR,@INCOME);";
                     SQLiteCommand cmd = new SQLiteCommand(insert,con);                  

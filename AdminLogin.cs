@@ -57,8 +57,8 @@ namespace LabadaPOS
                     if (dt.Rows.Count > 0)
                     {
 
-                        var Main = new Main();
-                        Main.Show();
+                        var monthlyincome = new MonthlyIncome();
+                        monthlyincome.Show();
                         this.Hide();
                         con.Close();
 

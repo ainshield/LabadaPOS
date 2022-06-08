@@ -48,6 +48,7 @@ namespace LabadaPOS
             // 
             this.password.Location = new System.Drawing.Point(82, 74);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(100, 23);
             this.password.TabIndex = 1;
             // 
@@ -93,6 +94,7 @@ namespace LabadaPOS
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Login";
             this.ResumeLayout(false);
             this.PerformLayout();

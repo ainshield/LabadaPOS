@@ -39,8 +39,8 @@ namespace LabadaPOS
             this.label1 = new System.Windows.Forms.Label();
             this.login_btn = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.date_time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.checkdbcon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.header)).BeginInit();
@@ -64,9 +64,9 @@ namespace LabadaPOS
             this.pin_txtbx.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.pin_txtbx.Location = new System.Drawing.Point(241, 292);
             this.pin_txtbx.Name = "pin_txtbx";
+            this.pin_txtbx.PasswordChar = '*';
             this.pin_txtbx.Size = new System.Drawing.Size(100, 23);
             this.pin_txtbx.TabIndex = 2;
-            this.pin_txtbx.Text = "4-digit PIN";
             this.pin_txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pin_txtbx.TextChanged += new System.EventHandler(this.pin_txtbx_TextChanged);
             this.pin_txtbx.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pin_txtbx_MouseDoubleClick);
@@ -146,18 +146,18 @@ namespace LabadaPOS
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // date_time
             // 
             this.date_time.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.date_time.Name = "date_time";
             this.date_time.Size = new System.Drawing.Size(64, 17);
             this.date_time.Text = "date_time";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // checkdbcon
             // 
