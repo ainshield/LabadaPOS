@@ -251,5 +251,25 @@ namespace LabadaPOS
         {
             ChangeLabelText();
         }
+
+        private void cancelbtn_Click(object sender, EventArgs e)
+        {
+            DialogResult cancel = MessageBox.Show("Cancel Order?", "LabadaPOS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (cancel == DialogResult.Yes) {
+
+                ltqty_txt.Text = "0";
+                mdqty_txt.Text = "0";
+                hvyqty_txt.Text = "0";
+                lndrymthd_txt.Text = "Machine Wash";
+                addons_txt.Text = "none";
+                pikupmthd_txt.Text = "Pickup";
+                numericUpDown_light.Value = 0;
+                numericUpDown_medium.Value = 0;
+                numericUpDown_heavy.Value = 0;
+            }
+            else { }
+
+        }
     }
 }

@@ -93,6 +93,18 @@ namespace LabadaPOS
             // year_txt
             // 
             this.year_txt.FormattingEnabled = true;
+            this.year_txt.Items.AddRange(new object[] {
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032"});
             this.year_txt.Location = new System.Drawing.Point(229, 6);
             this.year_txt.Name = "year_txt";
             this.year_txt.Size = new System.Drawing.Size(121, 23);

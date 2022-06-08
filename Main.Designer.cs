@@ -84,6 +84,7 @@ namespace LabadaPOS
             this.addons_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.total_txt = new System.Windows.Forms.TextBox();
+            this.cancelbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.exitbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -156,9 +157,9 @@ namespace LabadaPOS
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(51, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 36);
+            this.label1.Size = new System.Drawing.Size(305, 36);
             this.label1.TabIndex = 12;
-            this.label1.Text = "LabadaPOS";
+            this.label1.Text = "Sophie\'s Laundry Shop";
             // 
             // tabControl
             // 
@@ -692,13 +693,17 @@ namespace LabadaPOS
             // 
             // confirm_btn
             // 
-            this.confirm_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirm_btn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.confirm_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.confirm_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirm_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.confirm_btn.ForeColor = System.Drawing.Color.Black;
             this.confirm_btn.Location = new System.Drawing.Point(978, 624);
             this.confirm_btn.Name = "confirm_btn";
-            this.confirm_btn.Size = new System.Drawing.Size(290, 71);
+            this.confirm_btn.Size = new System.Drawing.Size(141, 71);
             this.confirm_btn.TabIndex = 21;
             this.confirm_btn.Text = "Confirm Order";
-            this.confirm_btn.UseVisualStyleBackColor = true;
+            this.confirm_btn.UseVisualStyleBackColor = false;
             this.confirm_btn.Click += new System.EventHandler(this.confirm_btn_Click);
             // 
             // panel6
@@ -749,12 +754,27 @@ namespace LabadaPOS
             this.total_txt.Text = "0.00";
             this.total_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // cancelbtn
+            // 
+            this.cancelbtn.BackColor = System.Drawing.Color.Red;
+            this.cancelbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkRed;
+            this.cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cancelbtn.Location = new System.Drawing.Point(1127, 624);
+            this.cancelbtn.Name = "cancelbtn";
+            this.cancelbtn.Size = new System.Drawing.Size(141, 71);
+            this.cancelbtn.TabIndex = 22;
+            this.cancelbtn.Text = "Cancel Order";
+            this.cancelbtn.UseVisualStyleBackColor = false;
+            this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.total_txt);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.confirm_btn);
@@ -858,5 +878,6 @@ namespace LabadaPOS
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox total_txt;
+        private System.Windows.Forms.Button cancelbtn;
     }
 }

@@ -122,9 +122,9 @@ namespace LabadaPOS
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(48, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 36);
+            this.label1.Size = new System.Drawing.Size(305, 36);
             this.label1.TabIndex = 7;
-            this.label1.Text = "LabadaPOS";
+            this.label1.Text = "Sophie\'s Laundry Shop";
             // 
             // login_btn
             // 
