@@ -28,13 +28,18 @@ Global
 		{DB3C30ED-CFBD-4365-BF1A-8F58F3B458CD}.Debug|Default.Build.0 = Debug
 		{DB3C30ED-CFBD-4365-BF1A-8F58F3B458CD}.Release|Any CPU.ActiveCfg = Release
 		{DB3C30ED-CFBD-4365-BF1A-8F58F3B458CD}.Release|Default.ActiveCfg = Release
-		{DB3C30ED-CFBD-4365-BF1A-8F58F3B458CD}.Release|Default.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B411CBA9-7F15-4FEC-811D-888350A97DAC}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Default = Debug|Default
+		Release|Any CPU = Release|Any CPU
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
