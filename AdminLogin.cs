@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Data.SQLite;
-using System.Data.SqlTypes;
+using System.Windows.Forms;
 
 
 namespace LabadaPOS
@@ -33,11 +27,11 @@ namespace LabadaPOS
                 if (myConnection != null && con.State == ConnectionState.Closed)
                 {
                     MessageBox.Show("Database Disconnected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    }
+                }
                 else
                 {
                     MessageBox.Show("Database Connected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
                 }
             }
             else

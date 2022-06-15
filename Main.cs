@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Data.SQLite;
-using System.Data.SqlTypes;
-using System.IO;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace LabadaPOS
 {
@@ -23,7 +16,7 @@ namespace LabadaPOS
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.ItemSize = new Size(0, 1);
             tabControl.SizeMode = TabSizeMode.Fixed;
-            
+
         }
         public void ChangeLabelText()
         {
@@ -84,7 +77,7 @@ namespace LabadaPOS
 
         private void exitbtn_MouseLeave(object sender, EventArgs e)
         {
-            exitbtn.BackColor = Color.DeepSkyBlue;     
+            exitbtn.BackColor = Color.DeepSkyBlue;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -138,10 +131,11 @@ namespace LabadaPOS
             {
                 addons_txt.Text = "Laundry Detergent";
             }
-            else {
+            else
+            {
                 addons_txt.Text = "none";
             }
-            
+
         }
 
         private void confirm_btn_Click(object sender, EventArgs e)
@@ -165,12 +159,12 @@ namespace LabadaPOS
                     string myConnection = @"Data Source=sales.db;Version=3;";
                     SQLiteConnection con = new SQLiteConnection(myConnection, true);
                     string insert = "INSERT INTO SALES(MONTH, DAY, YEAR, INCOME) VALUES(@MONTH,@DAY,@YEAR,@INCOME);";
-                    SQLiteCommand cmd = new SQLiteCommand(insert,con);                  
+                    SQLiteCommand cmd = new SQLiteCommand(insert, con);
                     cmd.Parameters.AddWithValue("@MONTH", month);
                     cmd.Parameters.AddWithValue("@DAY", day);
                     cmd.Parameters.AddWithValue("@YEAR", year);
                     cmd.Parameters.AddWithValue("@INCOME", total_txt.Text);
-                    
+
                     con.Open();
                     int i = cmd.ExecuteNonQuery();
 
@@ -179,8 +173,8 @@ namespace LabadaPOS
                         MessageBox.Show("Transaction complete.", "LabadaPOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    
-                    
+
+
                     con.Close();
                     ltqty_txt.Text = "0";
                     mdqty_txt.Text = "0";
@@ -198,8 +192,9 @@ namespace LabadaPOS
                     MessageBox.Show(ex.Message);
                 }
             }
-            else { 
-                
+            else
+            {
+
             }
         }
 
@@ -265,7 +260,8 @@ namespace LabadaPOS
         {
             DialogResult cancel = MessageBox.Show("Cancel Order?", "LabadaPOS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (cancel == DialogResult.Yes) {
+            if (cancel == DialogResult.Yes)
+            {
 
                 ltqty_txt.Text = "0";
                 mdqty_txt.Text = "0";

@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Data.SQLite;
-using System.Data.SqlTypes;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace LabadaPOS
 {
@@ -19,7 +12,7 @@ namespace LabadaPOS
         {
 
             InitializeComponent();
-           
+
         }
 
         private void exitbtn_MouseHover(object sender, EventArgs e)
@@ -41,12 +34,13 @@ namespace LabadaPOS
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            
-            
+
+
             if (pin_txtbx.Text.Trim() == "")
             {
                 MessageBox.Show("Field is Empty", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }else if (pin_txtbx.Text == "!1342!")
+            }
+            else if (pin_txtbx.Text == "!1342!")
             {
                 checkdbcon.Visible = true;
             }
@@ -83,8 +77,8 @@ namespace LabadaPOS
                 {
 
                     MessageBox.Show(ex.Message);
-                }                
-                
+                }
+
             }
         }
 
@@ -113,7 +107,8 @@ namespace LabadaPOS
                 MessageBox.Show("Database Disconnected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 checkdbcon.Visible = false;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Database Connected", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 checkdbcon.Visible = false;
             }
