@@ -29,17 +29,22 @@ namespace LabadaPOS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonthlyIncome));
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.month_txt = new System.Windows.Forms.ComboBox();
             this.year_txt = new System.Windows.Forms.ComboBox();
-            this.searchbtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.day_txt = new System.Windows.Forms.ComboBox();
-            this.total_check = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.income_total = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.date_time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv1
@@ -76,6 +81,7 @@ namespace LabadaPOS
             // 
             this.month_txt.FormattingEnabled = true;
             this.month_txt.Items.AddRange(new object[] {
+            "---",
             "January",
             "February",
             "March",
@@ -93,11 +99,13 @@ namespace LabadaPOS
             this.month_txt.Size = new System.Drawing.Size(121, 23);
             this.month_txt.TabIndex = 5;
             this.month_txt.Text = "---";
+            this.month_txt.TextChanged += new System.EventHandler(this.month_txt_TextChanged);
             // 
             // year_txt
             // 
             this.year_txt.FormattingEnabled = true;
             this.year_txt.Items.AddRange(new object[] {
+            "---",
             "2022",
             "2023",
             "2024",
@@ -114,16 +122,7 @@ namespace LabadaPOS
             this.year_txt.Size = new System.Drawing.Size(121, 23);
             this.year_txt.TabIndex = 6;
             this.year_txt.Text = "---";
-            // 
-            // searchbtn
-            // 
-            this.searchbtn.Location = new System.Drawing.Point(508, 5);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.Size = new System.Drawing.Size(75, 23);
-            this.searchbtn.TabIndex = 7;
-            this.searchbtn.Text = "Search";
-            this.searchbtn.UseVisualStyleBackColor = true;
-            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
+            this.year_txt.TextChanged += new System.EventHandler(this.year_txt_TextChanged);
             // 
             // label3
             // 
@@ -138,15 +137,16 @@ namespace LabadaPOS
             // 
             this.day_txt.FormattingEnabled = true;
             this.day_txt.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
+            "---",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
             "10",
             "11",
             "12",
@@ -174,23 +174,61 @@ namespace LabadaPOS
             this.day_txt.Size = new System.Drawing.Size(53, 23);
             this.day_txt.TabIndex = 9;
             this.day_txt.Text = "---";
+            this.day_txt.TextChanged += new System.EventHandler(this.day_txt_TextChanged);
             // 
-            // total_check
+            // label4
             // 
-            this.total_check.AutoSize = true;
-            this.total_check.Location = new System.Drawing.Point(451, 8);
-            this.total_check.Name = "total_check";
-            this.total_check.Size = new System.Drawing.Size(51, 19);
-            this.total_check.TabIndex = 10;
-            this.total_check.Text = "Total";
-            this.total_check.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(662, 469);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Total Income:";
+            // 
+            // income_total
+            // 
+            this.income_total.AutoSize = true;
+            this.income_total.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.income_total.Location = new System.Drawing.Point(716, 494);
+            this.income_total.Name = "income_total";
+            this.income_total.Size = new System.Drawing.Size(72, 40);
+            this.income_total.TabIndex = 12;
+            this.income_total.Text = "0.00";
+            this.income_total.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.date_time});
+            this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 540);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(801, 20);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 13;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // date_time
+            // 
+            this.date_time.Name = "date_time";
+            this.date_time.Size = new System.Drawing.Size(59, 15);
+            this.date_time.Text = "date_time";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MonthlyIncome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 485);
-            this.Controls.Add(this.total_check);
+            this.ClientSize = new System.Drawing.Size(801, 560);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.income_total);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.day_txt);
             this.Controls.Add(this.dgv1);
@@ -198,12 +236,13 @@ namespace LabadaPOS
             this.Controls.Add(this.label3);
             this.Controls.Add(this.month_txt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.searchbtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MonthlyIncome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monthly Income";
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,9 +255,12 @@ namespace LabadaPOS
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox month_txt;
         private System.Windows.Forms.ComboBox year_txt;
-        private System.Windows.Forms.Button searchbtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox day_txt;
-        private System.Windows.Forms.CheckBox total_check;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label income_total;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel date_time;
+        private System.Windows.Forms.Timer timer1;
     }
 }
